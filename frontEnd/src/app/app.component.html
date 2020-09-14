@@ -1,108 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{title}}</title>
 
   <style>
-    #mainBar{
-      width: 120px;
+    #mainBar {
+      width: 80px;
       height: 100vh;
-      background-color: blue;
+      background-color: #EDEDED;
       transition: width 0.5s;
+      padding: 0;
     }
-    .expand #mainBar{
-      width: 200px;
+
+    .expand #mainBar {
+      width: 250px;
       z-index: 50000;
     }
-    #sideBar{
+
+    #sideBar {
       width: 200px;
       height: 100vh;
-      background-color: blueviolet;
-      position: absolute;
-      top: 0;
-      z-index: -2;
-      left: 120px;
-      transition: left 0.5s;
-      
+      background-color: #DADADA;
     }
-        .expand #sideBar{
-          left: 200px;
-        }
 
-    #logo>img{
-      width: 80px;
-      margin: 20px;
+
+    #logo>img {
+      width: 50px;
+      margin: auto;
+      margin-top: 20px;
     }
-    #logo{
+
+    #logo {
       width: fit-content;
       margin: auto;
     }
 
-    hr{
+    hr {
       width: 80%;
       border: solid 1px black;
     }
-    #userInfo{
+
+    #userInfo {
       height: 100px;
       margin: auto;
       width: fit-content;
     }
 
-    #userInfo img{
+    #userInfo img {
       border-radius: 100%;
-      width: 80px;
+      width: 60px;
       margin: auto;
     }
-    #SuperGroups{
+
+    #SuperGroups {
       width: 100%;
-      height: 600px;
-      background-color: brown;
-      
     }
 
-    .SuperGroup{
-      background-color: burlywood;
+    .SuperGroup {
+      /* height: 100%; */
+
     }
 
-    .collapsed{
-     height: 20px;
+
+    .collapsed {
+      transition: height 0.5s;
       background-color: burlywood;
+      margin: auto;
+      height: 20px;
       overflow: hidden;
     }
 
-    .pinnedGroup .icon{
+
+    .pinnedGroup .icon {
       background-color: cadetblue;
-      width: 80px;
-      height: 80px;
-      margin: auto;
+      width: 60px;
+      height: 60px;
+      position: relative;
+      left: 0px;
       border-radius: 15px;
+      transition: left 0.5s;
+      z-index: 1;
     }
 
-    .pinnedGroup{
-   margin: 10px;
+    .expand .pinnedGroup .icon {
+      left: 10px;
     }
 
-    
+    .pinnedGroupText {
+      position: absolute;
+      left: 0;
+      top: 5px;
+      opacity: 0.0;
+      height: 50px;
+      
+      overflow: auto;
+    }
 
+    .expand .pinnedGroupText {
+      width: 150px;
+      opacity: 1.0;
+      left: 80px;
+      z-index: 0;
+      transition: opacity 0.5s,left 0.5s;
+    }
 
+    .pinnedGroup {
+      margin: 10px;
+      height: 60px;
+      position: relative;
+    }
 
-    
+    nav {
+      margin: 0;
+    }
+
+   .utility{
+      display: none;
+    }
+
+    .expand .utility{
+      display: inline;
+    }
+
+  *::-webkit-scrollbar {
+  width: 5px;
+  background-color:#DADADA;
+  border-radius: 5px;
+
+}
+ 
+ 
+*::-webkit-scrollbar-thumb {
+  background-color:rgb(117, 105, 105);
+  border-radius: 5px;
+
+}
 
   </style>
 </head>
+
 <body>
 
-  <nav [class.expand]="nav">
-    <div id="mainBar" (mouseover)='expand()' (mouseout)='shrink()'>
-      
+  <nav [class.expand]="nav" class="row">
+    <div id="mainBar" class="col-auto" (mouseover)='expand()' (mouseout)='shrink()'>
+
       <div id="logo">
         <img src="../assets/LogoOutlinenotext.svg" alt="">
       </div>
-      
+
       <hr>
-      
+
       <div id="userInfo">
         <img src="../assets/user.jpg" alt="">
       </div>
@@ -110,24 +172,35 @@
       <hr>
 
       <div id="SuperGroups">
-          <div class="SuperGroup collapsed" [class.collapsed]="classApplied" >
-            <span >PSUT</span>
-            <span (click)="toggleClass()"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+        <div class="SuperGroup " [class.collapsed]="classApplied">
+          <span>PSUT</span>
+          <span  (click)="toggleClass()"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down"
+              fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
             </svg></span>
-         
-          <div class="pinnedGroup">
-            <div class="icon"></div>
-          </div>
-          <div class="pinnedGroup">
-            <div class="icon"></div>
-          </div>
-          <div class="pinnedGroup">
-            <div class="icon"></div>
-          </div>
-          
+          <span class="utility">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-diagram-2" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5 7h2.5V6A1.5 1.5 0 0 1 6 4.5v-1zM8.5 5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1zM3 11.5A1.5 1.5 0 0 1 4.5 10h1A1.5 1.5 0 0 1 7 11.5v1A1.5 1.5 0 0 1 5.5 14h-1A1.5 1.5 0 0 1 3 12.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm4.5.5a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1A1.5 1.5 0 0 1 9 12.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z" />
+            </svg>
+          </span>
 
+          <div class="pinnedGroup row">
+            <div class="icon "></div>
+            <div class="pinnedGroupText ">Lorem Lorem Lorem Lorem Lorem ipsum dolor</div>
           </div>
+          <div class="pinnedGroup row">
+            <div class="icon "></div>
+            <div class="pinnedGroupText ">Lorem ipsum dolor</div>
+          </div> <div class="pinnedGroup row">
+            <div class="icon "></div>
+            <div class="pinnedGroupText ">Lorem ipsum dolor</div>
+          </div>
+
+
+        </div>
       </div>
 
     </div>
@@ -137,6 +210,7 @@
 
     </div>
   </nav>
-  
+
 </body>
+
 </html>
