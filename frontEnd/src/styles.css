@@ -1,5 +1,93 @@
 /* You can add global styles to this file, and also import other style files */
 
+ body {
+  transition: background-color .8s ease-in-out;
+  -webkit-transition: background-color 800ms ease-in-out;
+  -ms-transition: background-color 800ms ease-in-out;
+  transition: background-color 800ms ease-in-out;
+}
+
+.dark #feed {
+  background-color: #36393F !important;
+}
+
+.dark textarea {
+  background-color: #2B2C31 !important;
+  color: white !important;
+}
+
+
+.dark #chat {
+  background-color: #36393F !important;
+}
+
+
+.dark #mainBar {
+  background-color: #303237 !important;
+  color: white;
+}
+
+.dark #sideBar {
+  background-color: #2B2C31 !important;
+  color: white;
+}
+
+.dark .post {
+  background-color: #303237 !important;
+  color: white;
+}
+
+.dark .interactionPost div {
+  background-color: #303237 !important;
+  color: white;
+  border-color: #2B2C31;
+}
+
+.dark .interactionPost div:hover {
+  background-color: #2B2C31 !important;
+  color: white;
+  border-color: #2B2C31;
+}
+
+.dark #chatBox{
+  background-color: #303237 !important;
+  color: white;
+
+}
+
+.dark .messege p{
+  background-color: #2A2C30 !important;
+  color: white;
+
+}
+
+.dark .comments p {
+  background-color: #2A2C30 !important;
+}
+.dark .comments  {
+  background-color: #303237 !important;
+}
+
+.dark .messegeBox{
+  background-color: #303237 !important;
+}
+
+.dark .messegeBox span{
+  background-color: white !important;
+  color: #2A2C30;
+}
+
+
+.dark .commentBox{
+  background-color: #303237 !important;
+}
+
+.dark .commentBox span{
+  background-color: white !important;
+  color: #2A2C30;
+}
+
+
 body{
     padding: 0;
     margin: 0;
@@ -23,3 +111,151 @@ body{
     border-radius: 5px;
   
   }
+
+  #feed {
+    width: 960px;
+    position: relative;
+    height: 100vh;
+    background-color: #C6C6C6;
+    padding: 0;
+    position: fixed;
+    z-index: 0;
+    margin-left: 395px;
+    padding-top: 50px;
+    overflow: scroll;
+  }
+
+ 
+
+  .post {
+    width: 80%;
+    height: fit-content;
+    margin:50px auto;
+    background-color: #EDEDED;
+    border-radius: 30px;
+    overflow: hidden;
+    -webkit-box-shadow: 0px 25px 27px -16px rgba(0, 0, 0, 0.158);
+-moz-box-shadow: 0px 25px 27px -16px rgba(0,0,0,0.158);
+box-shadow: 0px 25px 27px -16px rgba(0,0,0,0.158);
+    
+  }
+
+  .postInfo {
+    margin-bottom: 20px;
+  }
+
+  .postInfo img {
+    width: 80px;
+    border-radius: 100%;
+
+  }
+
+  .postInfo div {
+    padding-left: 10px;
+    position: relative;
+    top: +10px;
+    display: inline-block;
+  }
+
+  .postContent {
+    position: relative;
+    padding-bottom: 50px;
+  }
+
+  .postContent div {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .postContent div span {
+    margin: 10px;
+    cursor: pointer;
+  }
+
+  .postContent,
+  .postInfo {
+    margin: 30px;
+  }
+
+  .interactionPost div {
+    padding: 5px;
+    font-size: 30px;
+    text-align: center;
+    width: 50%;
+    background-color: #EDEDED;
+    border: 1px solid #DADADA;
+  }
+
+  .interactionPost div:hover {
+
+    background-color: #DADADA;
+    cursor: pointer;
+  }
+
+  .comments {
+    background-color: #EDEDED;
+    width: 100%;
+    height: fit-content;
+  }
+
+  .comment {
+    display: flex;
+    padding: 15px 20px;
+
+  }
+
+  .comment img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+  }
+
+  .comment p {
+    background-color: #C6C6C6;
+    border-radius: 20px;
+    padding: 20px;
+    margin-left: 20px;
+
+  }
+
+  .commentBox {
+    background-color: whitesmoke;
+    display: flex;
+    position: relative;
+    padding: 20px;
+  }
+
+  .commentBox textarea {
+    resize: vertical;
+    width: 75%;
+    border-radius: 10px;
+    min-height: 60px;
+    margin: auto;
+    margin-right: 80px;
+  }
+
+  .commentBox img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+
+  }
+
+  .commentBox span {
+    background-color: #C6C6C6;
+    height: fit-content;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .hide {
+    display: none;
+  }
+
+
+
+  
