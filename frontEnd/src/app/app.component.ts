@@ -8,19 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'frontEnd';
 
-  nav = true;
 
-
-  expand(){
-    this.nav=true;
-  }
-  shrink(){
-    this.nav=false;
-  }
-
-  classApplied = false;
-
-  toggleClass() {
-    this.classApplied = !this.classApplied;
-  }
 }
