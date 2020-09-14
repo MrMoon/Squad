@@ -9,3 +9,17 @@ body{
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
 }
+
+*::-webkit-scrollbar {
+    width: 5px;
+    background-color:#DADADA;
+    border-radius: 5px;
+  
+  }
+   
+   
+  *::-webkit-scrollbar-thumb {
+    background-color:rgb(117, 105, 105);
+    border-radius: 5px;
+  
+  }

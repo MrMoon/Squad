@@ -12,7 +12,7 @@ export class NavigationComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  nav = true;
+  nav = false;
 
 
   expand(){

@@ -1,319 +1,343 @@
 <style>
-    #mainBar {
-      width: 80px;
-      height: 100vh;
-      background-color: #EDEDED;
-      transition: width 0.5s;
-      padding: 0;
-      overflow: hidden;
-      z-index: 3;
-    }
+  #mainBar {
+    width: 80px;
+    height: 100vh;
+    background-color: #EDEDED;
+    transition: width 0.5s;
+    padding: 0;
+    overflow: hidden;
+    z-index: 3;
+  }
 
-    .expand #mainBar {
-      width: 250px;
-      z-index: 50000;
-    }
+  .expand #mainBar {
+    width: 250px;
+    z-index: 50000;
+  }
 
-    #sideBar {
-      width: 300px;
-      height: 100vh;
-      z-index: 2;
-      background-color: #DADADA;
-    }
-
-
-    #logo>img {
-      height: 50px;
-      width: auto;
-      margin: auto;
-      margin-top: 20px;
-    }
-    #logo>img:last-of-type {
-     position:relative;
-     top: -70px;
-     left: 0;
-     opacity: 0;
-    }
-    .expand #logo>img:last-of-type {
-      opacity: 1;
-      transition: opacity .3s;
-
-    }
-    .expand #logo>img:first-of-type {
-      opacity: 0;
-      transition: opacity .3s;
-    }
+  #sideBar {
+    width: 300px;
+    height: 100vh;
+    z-index: 2;
+    background-color: #DADADA;
+  }
 
 
-    #logo {
-      position: relative;
-      height: 80px;
-      overflow: hidden;
-      width: fit-content;
-      margin-left: 12px;
-    }
+  #logo>img {
+    height: 50px;
+    width: auto;
+    margin: auto;
+    margin-top: 20px;
+  }
 
-    hr {
-      width: 80%;
-      border: solid 1px black;
-    }
+  #logo>img:last-of-type {
+    position: relative;
+    top: -70px;
+    left: 0;
+    opacity: 0;
+  }
 
-    #userInfo {
-      height: 100px;
-      margin: auto;
-      width: fit-content;
-    }
+  .expand #logo>img:last-of-type {
+    opacity: 1;
+    transition: opacity .3s;
 
-    #userInfo img {
-      border-radius: 100%;
-      width: 60px;
-      margin: auto;
-    }
+  }
 
-    #SuperGroups {
-      width: 100%;
-
-    }
-    .collapsed {
-      transition: height 0.5s;
-      background-color: burlywood;
-      margin: auto;
-      height: 20px;
-      overflow: hidden;
-    }
+  .expand #logo>img:first-of-type {
+    opacity: 0;
+    transition: opacity .3s;
+  }
 
 
-    .pinnedGroup .icon {
-      background-color: cadetblue;
-      width: 60px;
-      height: 60px;
-      position: relative;
-      left: 0px;
-      border-radius: 15px;
-      transition: left 0.5s;
-      z-index: 1;
-      overflow: hidden;
-    }
-    
-    .expand .pinnedGroup .icon {
-      left: 10px;
-    }
+  #logo {
+    position: relative;
+    height: 80px;
+    overflow: hidden;
+    width: fit-content;
+    margin-left: 12px;
+  }
 
-    .pinnedGroupText {
-      position: absolute;
-      left: -80px;
-      top: 5px;
-      opacity: 0.0;
-      height: 50px;
-      overflow: auto;
-    }
+  hr {
+    width: 80%;
+    border: solid 1px black;
+  }
 
-    .expand .pinnedGroupText {
-      width: 150px;
-      opacity: 1.0;
-      left: 80px;
-      z-index: 0;
-      transition: opacity 1.0s,left 0.5s;
-    }
+  #userInfo {
+    height: 100px;
+    margin: auto;
+    width: fit-content;
+  }
 
-    .pinnedGroup {
-      margin: 10px;
-      height: 60px;
-      position: relative;
-      cursor: pointer;
-    }
+  #userInfo img {
+    border-radius: 100%;
+    width: 60px;
+    margin: auto;
+  }
 
-    nav {
-      margin: 0;
-      padding-right:  0px!important ;
-    }
+  #SuperGroups {
+    width: 100%;
 
-   .utility{
-      display: none;
-      cursor: pointer;
-    }
+  }
 
-    .expand .utility{
-      display: inline;
-      margin: 0px 2px;
-      float: right;
-    }
-
-  *::-webkit-scrollbar {
-  width: 5px;
-  background-color:#DADADA;
-  border-radius: 5px;
-
-}
- 
- 
-*::-webkit-scrollbar-thumb {
-  background-color:rgb(117, 105, 105);
-  border-radius: 5px;
-
-}
-
-.SuperGroupBar{
-  overflow: hidden;
-  height: 30px;
-}
-.SuperGroupBar{
-  cursor: pointer;
-}
+  .collapsed {
+    transition: height 0.5s;
+    background-color: burlywood;
+    margin: auto;
+    height: 20px;
+    overflow: hidden;
+  }
 
 
-#sideBar div{
-  width: 90%;
-  height: fit-content;
-  margin: auto;
-  margin-top: 20px;
-}
-#sideBar ul li{
-  list-style: none;
-  cursor: pointer;
-}
+  .pinnedGroup .icon {
+    background-color: cadetblue;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    left: 0px;
+    border-radius: 15px;
+    transition: left 0.5s;
+    z-index: 1;
+    overflow: hidden;
+  }
 
-.SuperGroupTitle{
-  width: 80px;
-  display: inline-block;
-  text-align: center;
-  overflow: hidden;
-}
-  </style>
+  .expand .pinnedGroup .icon {
+    left: 10px;
+  }
+
+  .pinnedGroupText {
+    position: absolute;
+    left: -80px;
+    top: 5px;
+    opacity: 0.0;
+    height: 50px;
+    overflow: auto;
+  }
+
+  .expand .pinnedGroupText {
+    width: 150px;
+    opacity: 1.0;
+    left: 80px;
+    z-index: 0;
+    transition: opacity 1.0s, left 0.5s;
+  }
+
+  .pinnedGroup {
+    margin: 10px;
+    height: 60px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  nav {
+    margin: 0;
+    padding-right: 0px !important;
+  }
+
+  .utility {
+    display: none;
+    cursor: pointer;
+  }
+
+  .expand .utility {
+    display: inline;
+    margin: 0px 2px;
+    float: right;
+  }
+
+
+
+  .SuperGroupBar {
+    overflow: hidden;
+    height: 30px;
+  }
+
+  .SuperGroupBar {
+    cursor: pointer;
+  }
+
+
+  #sideBar div {
+    width: 90%;
+    height: fit-content;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  #sideBar ul li {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .SuperGroupTitle {
+    width: 80px;
+    display: inline-block;
+    text-align: center;
+    overflow: hidden;
+  }
+
+</style>
 
 <nav [class.expand]="nav" class="row col-auto">
-    <div id="mainBar" class="col-auto" (mouseover)='expand()' (mouseout)='shrink()'>
+  <div id="mainBar" class="col-auto" (mouseover)='expand()' (mouseout)='shrink()'>
 
-      <div id="logo">
-        <img src="../assets/LogoOutlinenotext.svg" alt="">
-        <img src="../assets/logofilledwithtext.svg" alt="">
-      </div>
+    <div id="logo">
+      <img src="../assets/LogoOutlinenotext.svg" alt="">
+      <img src="../assets/logofilledwithtext.svg" alt="">
+    </div>
 
-      <hr>
+    <hr>
 
-      <div id="userInfo">
-        <img src="../assets/user.jpg" alt="">
-        <span class="utility"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-journals" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path d="M3 2h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2h1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1H1a2 2 0 0 1 2-2z"/>
-          <path d="M5 0h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2v-1a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1H3a2 2 0 0 1 2-2zM1 6v-.5a.5.5 0 0 1 1 0V6h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V9h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+    <div id="userInfo">
+      <img src="../assets/user.jpg" alt="">
+      <span class="utility"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-journals" fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M3 2h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2h1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1H1a2 2 0 0 1 2-2z" />
+          <path
+            d="M5 0h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2v-1a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1H3a2 2 0 0 1 2-2zM1 6v-.5a.5.5 0 0 1 1 0V6h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V9h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
         </svg></span>
-        <span class="utility"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-camera-video-off" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" d="M10.961 12.365a1.99 1.99 0 0 0 .522-1.103l3.11 1.382A1 1 0 0 0 16 11.731V4.269a1 1 0 0 0-1.406-.913l-3.111 1.382A2 2 0 0 0 9.5 3H4.272l.714 1H9.5a1 1 0 0 1 1 1v6a1 1 0 0 1-.144.518l.605.847zM1.428 4.18A.999.999 0 0 0 1 5v6a1 1 0 0 0 1 1h5.014l.714 1H2a2 2 0 0 1-2-2V5c0-.675.334-1.272.847-1.634l.58.814zM15 11.73l-3.5-1.555v-4.35L15 4.269v7.462zm-4.407 3.56l-10-14 .814-.58 10 14-.814.58z"/>
+      <span class="utility"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-camera-video-off"
+          fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd"
+            d="M10.961 12.365a1.99 1.99 0 0 0 .522-1.103l3.11 1.382A1 1 0 0 0 16 11.731V4.269a1 1 0 0 0-1.406-.913l-3.111 1.382A2 2 0 0 0 9.5 3H4.272l.714 1H9.5a1 1 0 0 1 1 1v6a1 1 0 0 1-.144.518l.605.847zM1.428 4.18A.999.999 0 0 0 1 5v6a1 1 0 0 0 1 1h5.014l.714 1H2a2 2 0 0 1-2-2V5c0-.675.334-1.272.847-1.634l.58.814zM15 11.73l-3.5-1.555v-4.35L15 4.269v7.462zm-4.407 3.56l-10-14 .814-.58 10 14-.814.58z" />
         </svg>
-        </span>
-        
-        <span class="utility"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-mic-mute" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" d="M12.734 9.613A4.995 4.995 0 0 0 13 8V7a.5.5 0 0 0-1 0v1c0 .274-.027.54-.08.799l.814.814zm-2.522 1.72A4 4 0 0 1 4 8V7a.5.5 0 0 0-1 0v1a5 5 0 0 0 4.5 4.975V15h-3a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-3v-2.025a4.973 4.973 0 0 0 2.43-.923l-.718-.719zM11 7.88V3a3 3 0 0 0-5.842-.963l.845.845A2 2 0 0 1 10 3v3.879l1 1zM8.738 9.86l.748.748A3 3 0 0 1 5 8V6.121l1 1V8a2 2 0 0 0 2.738 1.86zm4.908 3.494l-12-12 .708-.708 12 12-.708.707z"/>
+      </span>
+
+      <span class="utility"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-mic-mute" fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd"
+            d="M12.734 9.613A4.995 4.995 0 0 0 13 8V7a.5.5 0 0 0-1 0v1c0 .274-.027.54-.08.799l.814.814zm-2.522 1.72A4 4 0 0 1 4 8V7a.5.5 0 0 0-1 0v1a5 5 0 0 0 4.5 4.975V15h-3a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-3v-2.025a4.973 4.973 0 0 0 2.43-.923l-.718-.719zM11 7.88V3a3 3 0 0 0-5.842-.963l.845.845A2 2 0 0 1 10 3v3.879l1 1zM8.738 9.86l.748.748A3 3 0 0 1 5 8V6.121l1 1V8a2 2 0 0 0 2.738 1.86zm4.908 3.494l-12-12 .708-.708 12 12-.708.707z" />
         </svg></span>
-        <span class="utility"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-lines-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7 1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm2 9a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
+      <span class="utility"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-lines-fill"
+          fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd"
+            d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7 1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm2 9a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
         </svg></span>
 
-        <span class="utility"></span>
+      <span class="utility"></span>
 
-        <span class="utility"></span>
+      <span class="utility"></span>
 
-      </div>
+    </div>
 
-      <hr>
+    <hr>
 
-      <div id="SuperGroups">
-        <div class="SuperGroup " [class.collapsed]="classApplied">
-          <div class="SuperGroupBar" (click)="toggleClass()">
+    <div id="SuperGroups">
+      <div class="SuperGroup " [class.collapsed]="classApplied">
+        <div class="SuperGroupBar" (click)="toggleClass()">
 
-            <span class="SuperGroupTitle">PSddT </span>
-            <span class="utility" (click)="toggleClass()"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down"
-              fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <span class="SuperGroupTitle">PSUT </span>
+          <span class="utility" (click)="toggleClass()"><svg width="1em" height="1em" viewBox="0 0 16 16"
+              class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd"
-              d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
             </svg></span>
-            <span class="utility">
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-diagram-2" fill="currentColor"
+          <span class="utility">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-diagram-2" fill="currentColor"
               xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd"
-              d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5 7h2.5V6A1.5 1.5 0 0 1 6 4.5v-1zM8.5 5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1zM3 11.5A1.5 1.5 0 0 1 4.5 10h1A1.5 1.5 0 0 1 7 11.5v1A1.5 1.5 0 0 1 5.5 14h-1A1.5 1.5 0 0 1 3 12.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm4.5.5a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1A1.5 1.5 0 0 1 9 12.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z" />
+                d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5 7h2.5V6A1.5 1.5 0 0 1 6 4.5v-1zM8.5 5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1zM3 11.5A1.5 1.5 0 0 1 4.5 10h1A1.5 1.5 0 0 1 7 11.5v1A1.5 1.5 0 0 1 5.5 14h-1A1.5 1.5 0 0 1 3 12.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm4.5.5a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1A1.5 1.5 0 0 1 9 12.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z" />
             </svg>
           </span>
 
           <span class="utility">
-            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-gear" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z"/>
-              <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z"/>
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-gear" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z" />
+              <path fill-rule="evenodd"
+                d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z" />
             </svg>
-        </span>
+          </span>
         </div>
 
-          <div class="pinnedGroup row">
-            <div class="icon "></div>
-            <div class="pinnedGroupText ">Lorem Lorem Lorem Lorem Lorem ipsum dolor</div>
-          </div>
-          <div class="pinnedGroup row">
-            <div class="icon"><img src="../assets/user.jpg"width="100%" alt=""></div>
-            <div class="pinnedGroupText ">Lorem ipsum dolor</div>
-          </div> <div class="pinnedGroup row">
-            <div class="icon "></div>
-            <div class="pinnedGroupText ">Lorem ipsum dolor</div>
-          </div>
-
-
+        <div class="pinnedGroup row">
+          <div class="icon "></div>
+          <div class="pinnedGroupText ">Lorem Lorem Lorem Lorem Lorem ipsum dolor</div>
         </div>
+        <div class="pinnedGroup row">
+          <div class="icon"><img src="../assets/user.jpg" width="100%" alt=""></div>
+          <div class="pinnedGroupText ">Lorem ipsum dolor</div>
+        </div>
+        <div class="pinnedGroup row">
+          <div class="icon "></div>
+          <div class="pinnedGroupText ">Lorem ipsum dolor</div>
+        </div>
+
+
       </div>
-
     </div>
 
-    <div id="sideBar">
-        <div id="Global">
-            <p><strong>Global</strong></p>
-            <ul>
-              <li><a><span><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bell" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2z"/>
-                <path fill-rule="evenodd" d="M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
+  </div>
+
+  <div id="sideBar">
+    <div id="Global">
+      <p><strong>Global</strong></p>
+      <ul>
+        <li><a><span><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bell" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2z" />
+                <path fill-rule="evenodd"
+                  d="M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
               </svg></span> Announcements <span class="badge badge-pill badge-primary">2</span></a></li>
-              <li><a><span><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-hourglass-split" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M2.5 15a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11zm2-13v1c0 .537.12 1.045.337 1.5h6.326c.216-.455.337-.963.337-1.5V2h-7zm3 6.35c0 .701-.478 1.236-1.011 1.492A3.5 3.5 0 0 0 4.5 13s.866-1.299 3-1.48V8.35zm1 0c0 .701.478 1.236 1.011 1.492A3.5 3.5 0 0 1 11.5 13s-.866-1.299-3-1.48V8.35z"/>
+        <li><a><span><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-hourglass-split" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M2.5 15a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11zm2-13v1c0 .537.12 1.045.337 1.5h6.326c.216-.455.337-.963.337-1.5V2h-7zm3 6.35c0 .701-.478 1.236-1.011 1.492A3.5 3.5 0 0 0 4.5 13s.866-1.299 3-1.48V8.35zm1 0c0 .701.478 1.236 1.011 1.492A3.5 3.5 0 0 1 11.5 13s-.866-1.299-3-1.48V8.35z" />
               </svg></span> Due-dates</a></li>
-              <li><a><span><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-menu-button-wide" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M0 1.5A1.5 1.5 0 0 1 1.5 0h13A1.5 1.5 0 0 1 16 1.5v2A1.5 1.5 0 0 1 14.5 5h-13A1.5 1.5 0 0 1 0 3.5v-2zM1.5 1a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-13zM14 7H2a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1zM2 6a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2H2z"/>
-                <path fill-rule="evenodd" d="M15 11H1v-1h14v1zM2 12.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0-10a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5z"/>
-                <path d="M12.823 2.823l-.396-.396A.25.25 0 0 1 12.604 2h.792a.25.25 0 0 1 .177.427l-.396.396a.25.25 0 0 1-.354 0z"/>
+        <li><a><span><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-menu-button-wide"
+                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M0 1.5A1.5 1.5 0 0 1 1.5 0h13A1.5 1.5 0 0 1 16 1.5v2A1.5 1.5 0 0 1 14.5 5h-13A1.5 1.5 0 0 1 0 3.5v-2zM1.5 1a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-13zM14 7H2a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1zM2 6a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2H2z" />
+                <path fill-rule="evenodd"
+                  d="M15 11H1v-1h14v1zM2 12.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0-10a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5z" />
+                <path
+                  d="M12.823 2.823l-.396-.396A.25.25 0 0 1 12.604 2h.792a.25.25 0 0 1 .177.427l-.396.396a.25.25 0 0 1-.354 0z" />
               </svg></span> posts</a></li>
-              <br>
-              <li><a>Messeges</a></li>
-            </ul>
-        </div>
-        <div id="subGroup">
-          
-          <p><strong>Princess Sumaya Univesty</strong></p>
-             <ul>
-              <li><a><span><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bell" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2z"/>
-                <path fill-rule="evenodd" d="M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
-              </svg></span> Announcements <span class="badge badge-pill badge-primary">2</span></a></li>
-              <li><a><span><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-hourglass-split" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M2.5 15a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11zm2-13v1c0 .537.12 1.045.337 1.5h6.326c.216-.455.337-.963.337-1.5V2h-7zm3 6.35c0 .701-.478 1.236-1.011 1.492A3.5 3.5 0 0 0 4.5 13s.866-1.299 3-1.48V8.35zm1 0c0 .701.478 1.236 1.011 1.492A3.5 3.5 0 0 1 11.5 13s-.866-1.299-3-1.48V8.35z"/>
-              </svg></span> Due-dates</a></li>
-              <li><a><span><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-menu-button-wide" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M0 1.5A1.5 1.5 0 0 1 1.5 0h13A1.5 1.5 0 0 1 16 1.5v2A1.5 1.5 0 0 1 14.5 5h-13A1.5 1.5 0 0 1 0 3.5v-2zM1.5 1a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-13zM14 7H2a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1zM2 6a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2H2z"/>
-                <path fill-rule="evenodd" d="M15 11H1v-1h14v1zM2 12.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0-10a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5z"/>
-                <path d="M12.823 2.823l-.396-.396A.25.25 0 0 1 12.604 2h.792a.25.25 0 0 1 .177.427l-.396.396a.25.25 0 0 1-.354 0z"/>
-              </svg></span> Feed</a></li>
-            </ul>
-            
-
-            <p>Chatrooms</p>
-
-            <ul>
-             <li><a># room1</a></li>
-             <li><a># room2</a></li>
-             <li><a># Discutions</a></li>
-             <li><a># Announcements</a></li>
-            </ul>
-
-            <p>Voice Chatrooms</p>
-
-            <ul>
-             <li><a># room1</a></li>
-            </ul>
-        </div>
+        <br>
+        <li><a>Messeges</a></li>
+      </ul>
     </div>
-  </nav>
+    <div id="subGroup">
+
+      <p><strong>Princess Sumaya Univesty</strong></p>
+      <ul>
+        <li><a><span><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bell" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2z" />
+                <path fill-rule="evenodd"
+                  d="M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
+              </svg></span> Announcements <span class="badge badge-pill badge-primary">2</span></a></li>
+        <li><a><span><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-hourglass-split" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M2.5 15a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11zm2-13v1c0 .537.12 1.045.337 1.5h6.326c.216-.455.337-.963.337-1.5V2h-7zm3 6.35c0 .701-.478 1.236-1.011 1.492A3.5 3.5 0 0 0 4.5 13s.866-1.299 3-1.48V8.35zm1 0c0 .701.478 1.236 1.011 1.492A3.5 3.5 0 0 1 11.5 13s-.866-1.299-3-1.48V8.35z" />
+              </svg></span> Due-dates</a></li>
+        <li><a><span><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-menu-button-wide"
+                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M0 1.5A1.5 1.5 0 0 1 1.5 0h13A1.5 1.5 0 0 1 16 1.5v2A1.5 1.5 0 0 1 14.5 5h-13A1.5 1.5 0 0 1 0 3.5v-2zM1.5 1a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-13zM14 7H2a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1zM2 6a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2H2z" />
+                <path fill-rule="evenodd"
+                  d="M15 11H1v-1h14v1zM2 12.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0-10a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5z" />
+                <path
+                  d="M12.823 2.823l-.396-.396A.25.25 0 0 1 12.604 2h.792a.25.25 0 0 1 .177.427l-.396.396a.25.25 0 0 1-.354 0z" />
+              </svg></span> Feed</a></li>
+      </ul>
+
+
+      <p>Chatrooms</p>
+
+      <ul>
+        <li><a># room1</a></li>
+        <li><a># room2</a></li>
+        <li><a># Discutions</a></li>
+        <li><a># Announcements</a></li>
+      </ul>
+
+      <p>Voice Chatrooms</p>
+
+      <ul>
+        <li><a># room1</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
