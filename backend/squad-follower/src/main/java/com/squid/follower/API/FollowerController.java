@@ -22,13 +22,13 @@ public class FollowerController {
         return followerService.getAllFollowing(userId);
     }
 
-    @PostMapping( "/{userId}/{friendId}")
+    @PostMapping( "/follow/{userId}/{friendId}")
     public boolean followSomeId(@PathVariable String userId,@PathVariable String friendId){
-        return  followerService.followById(userId,friendId);
+        return followerService.followById(userId,friendId);
     }
 
-    @PostMapping( "/{userId}/{friendId}")
-    public boolean unfollowSomeId(@PathVariable String userId,@PathVariable String friendId) {
-        return followerService.unfollowById(userId, friendId);
+    @PostMapping("/unfollow/{userId}/{friendId}")
+    public boolean unfollowSomeId(@PathVariable String userId,@PathVariable String friendId){
+        return followerService.unfollowById(userId,friendId);
     }
 }

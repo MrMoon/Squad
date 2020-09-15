@@ -11,6 +11,11 @@ public class FollowerService {
     public ArrayList<Follower> getAllFollowing(String id){
         return new ArrayList<Follower>();
     }
+    public boolean isFollowing(String usedId,String friendId){
+        //if userId follows friendId
+        //if friendId is in getAllFollowing(userId)
+        return true;
+    }
     public boolean followById(String userId,String friendId){
         return true;
     }
