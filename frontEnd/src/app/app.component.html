@@ -10,212 +10,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{title}}</title>
 
-  <style>
-
-#chat {
-    width: 100%;
-    position: relative;
-    height: 100vh;
-    background-color: #DADADA;
-    padding: 0;
-    position: fixed;
-    z-index: 0;
-    margin-left: 1360px;
-
-  }
-
-    #friendList{
-      height: 100vh;
-      width: 80px;
-      background-color: aquamarine;
-      padding: 0!important;
-      overflow-x: hidden;
-      overflow-y: scroll;
-    }
-
-    .user{
-      width: 60px;
-      height: 60px;
-      border-radius: 100%;
-      margin:  15px auto;
-      display: flex;    
-      cursor: pointer; 
-    }
-    #chatBox{
-      width: 30%;
-      border-radius: 20px;
-      background-color: #EDEDED;
-      margin: 30px;
-      padding: 0;
-      
-    font-size: 13px;
-      height: 95vh;
-      overflow-y: scroll;
-    }
+<style type="text/css">
 
 
 
-  .messege {
-    display: flex;
-    padding: 15px 20px;
-    flex-direction: row;
-  }
 
-  .messege.you{
-    flex-direction: row-reverse;
-  }
-  .messege img {
-    width: 60px;
-    height: 60px;
-    border-radius: 100%;
-  }
 
-  .messege p {
-    background-color: #C6C6C6;
-    border-radius: 20px;
-    padding: 20px;
-    margin: 5px 28px;
-    margin-top:0px ;
-    width: 70%;
-    
-
-  }
-
-  .messegeBox {
-    
-    background-color: whitesmoke;
-    display: flex;
-    position:sticky;
-    bottom: 0;
-    padding: 20px;
-  }
-
-  .messegeBox textarea {
-    resize: vertical;
-    width: 75%;
-    border-radius: 10px;
-    min-height: 60px;
-    margin: auto;
-    margin-right: 80px;
-  }
-
-  .messegeBox img {
-    width: 60px;
-    height: 60px;
-    border-radius: 100%;
-
-  }
-
-  .messegeBox span {
-    background-color: #C6C6C6;
-    height: fit-content;
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
-    padding: 10px;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-
-  </style>
+</style>
  
 </head>
 
-<body class="dark">
+<body class="">
   <div class="row w-100">
 
     <navigation ></navigation>
 
 <feed id=feed class="col-auto"></feed>
-    <div id=chat class=" col-auto w-100 row ">
-      <div id="chatBox" class=" col-auto">
-       
-        <div class="messege">
-          <img src="../assets/user.jpg" alt="">
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non perferendis dignissimos alias, rem tempora
-            sequi eligendi quo! Asperiores similique architecto, dolores, quisquam eveniet quasi corporis harum
-            numquam, tempore reiciendis delectus.</p>
-            
-        </div>
-       
-        <div class="messege">
-          <img src="../assets/user.jpg" alt="">
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non perferendis dignissimos alias, rem tempora
-            sequi eligendi quo! Asperiores similique architecto, dolores, quisquam eveniet quasi corporis harum
-            numquam, tempore reiciendis delectus.</p>
-            
-        </div>
-
-
-        <div class="messege">
-          <img src="../assets/user.jpg" alt="">
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non perferendis dignissimos alias, rem tempora
-            sequi eligendi quo! Asperiores similique architecto, dolores, quisquam eveniet quasi corporis harum
-            numquam, tempore reiciendis delectus.</p>
-            
-        </div>
-
-        <div class="messege">
-          <img src="../assets/user.jpg" alt="">
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non perferendis dignissimos alias, rem tempora
-            sequi eligendi quo! Asperiores similique architecto, dolores, quisquam eveniet quasi corporis harum
-            numquam, tempore reiciendis delectus.</p>
-            
-        </div>
-
-        <div class="messege">
-          <img src="../assets/user.jpg" alt="">
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non perferendis dignissimos alias, rem tempora
-            sequi eligendi quo! Asperiores similique architecto, dolores, quisquam eveniet quasi corporis harum
-            numquam, tempore reiciendis delectus.</p>
-            
-        </div>
-
-        <div class="messege you">
-          <img src="../assets/user.jpg" alt="">
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non perferendis dignissimos alias, rem tempora
-            sequi eligendi quo! Asperiores similique architecto, dolores, quisquam eveniet quasi corporis harum
-            numquam, tempore reiciendis delectus.</p>
-            
-        </div>
-
-        <div class="messege">
-          <img src="../assets/user.jpg" alt="">
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non perferendis dignissimos alias, rem tempora
-            sequi eligendi quo! Asperiores similique architecto, dolores, quisquam eveniet quasi corporis harum
-            numquam, tempore reiciendis delectus.</p>
-        </div>
-
-        <div class="messegeBox">
-          <textarea  class="form-control"></textarea>
-          <span>send</span>
-        </div>
-      </div>
-      <div class="col-auto" id="friendList"> 
-        <img src="../assets/user.jpg" class="user" alt="">
-        <img src="../assets/user.jpg" class="user" alt="">
-        <img src="../assets/user.jpg" class="user" alt="">
-        <img src="../assets/user.jpg" class="user" alt="">
-        <img src="../assets/user.jpg" class="user" alt="">
-
-        <img src="../assets/user.jpg" class="user" alt="">
-        <img src="../assets/user.jpg" class="user" alt="">
-        <img src="../assets/user.jpg" class="user" alt="">
-        <img src="../assets/user.jpg" class="user" alt="">
-        <img src="../assets/user.jpg" class="user" alt="">
-        <img src="../assets/user.jpg" class="user" alt="">
-        <img src="../assets/user.jpg" class="user" alt="">
-        <img src="../assets/user.jpg" class="user" alt="">
-        <img src="../assets/user.jpg" class="user" alt="">
-        <img src="../assets/user.jpg" class="user" alt="">
-        <img src="../assets/user.jpg" class="user" alt="">
-        <img src="../assets/user.jpg" class="user" alt="">
-        <img src="../assets/user.jpg" class="user" alt="">
-        <img src="../assets/user.jpg" class="user" alt="">
-        <img src="../assets/user.jpg" class="user" alt="">
-
-      </div>
-    </div>
+<chat id=chat class=" col-auto w-100 row"></chat>
   </div>
 </body>
 
