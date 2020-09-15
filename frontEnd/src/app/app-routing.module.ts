@@ -8,6 +8,12 @@ const routes: Routes = [
     path:'feed',component:FeedComponent ,outlet:'one'
   } ,
   {
+    path:'feed',component:FeedComponent ,outlet:'two'
+  },
+  {
+    path:'chat',component:ChatComponent ,outlet:'one'
+  } ,
+  {
     path:'chat',component:ChatComponent ,outlet:'two'
   } 
   // {

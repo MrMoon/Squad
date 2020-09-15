@@ -12,6 +12,21 @@
 
 <style type="text/css">
 
+  #one{
+    background-color: #C6C6C6;
+    height: 100vh;
+     overflow-x: hidden;
+  overflow-y: scroll;
+
+
+  }
+  #two{
+    height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: #DADADA;
+
+  }
 
 
 
@@ -21,12 +36,17 @@
 </head>
 
 <body class="">
-  <div class="row w-100">
-<!-- <router-outlite></router-outlite> -->
-    <navigation ></navigation>
-
-<feed id=feed class="col-auto"></feed>
-<chat id=chat class=" col-auto w-100 row"></chat>
+  <div class="row w-100 ">
+    <div class="col-auto p-0"> 
+      <navigation class=""></navigation>
+    </div>
+    <div id=one class="col-6">
+      <router-outlet name="one"></router-outlet>
+    </div>
+    
+    <div id=two class="col">
+      <router-outlet name="two"></router-outlet>
+    </div>
   </div>
 </body>
 
