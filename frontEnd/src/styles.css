@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
+chat{
+width: 33% !important;
+}
  body {
   transition: background-color .8s ease-in-out;
   -webkit-transition: background-color 800ms ease-in-out;
@@ -55,7 +58,7 @@
 
 }
 
-.dark .messege p{
+.dark .message p{
   background-color: #2A2C30 !important;
   color: white;
 
@@ -68,11 +71,11 @@
   background-color: #303237 !important;
 }
 
-.dark .messegeBox{
+.dark .messageBox{
   background-color: #303237 !important;
 }
 
-.dark .messegeBox span{
+.dark .messageBox span{
   background-color: white !important;
   color: #2A2C30;
 }
@@ -252,6 +255,7 @@ box-shadow: 0px 25px 27px -16px rgba(0,0,0,0.158);
     border-radius: 20px;
     padding: 20px;
     margin-left: 20px;
+        white-space: break-spaces;
 
   }
 
@@ -266,7 +270,7 @@ box-shadow: 0px 25px 27px -16px rgba(0,0,0,0.158);
     resize: vertical;
     width: 75%;
     border-radius: 10px;
-    min-height: 60px;
+    min-height: 40px;
     margin: auto;
     margin-right: 80px;
   }
@@ -313,7 +317,6 @@ box-shadow: 0px 25px 27px -16px rgba(0,0,0,0.158);
   #friendList{
     height: 100vh;
     width: 80px;
-    background-color: aquamarine;
     padding: 0!important;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -324,18 +327,27 @@ box-shadow: 0px 25px 27px -16px rgba(0,0,0,0.158);
     height: 60px;
     border-radius: 100%;
     margin:  15px auto;
-    display: flex;    
     cursor: pointer; 
+  }
+  span.user{
+    display: block;
+  }
+  span.user:nth-child(3n+3){
+    background-color: #5EC1CE;
+  }
+  span.user:nth-child(3n+2){
+    background-color: #46B381;
+  }
+  span.user:nth-child(3n+1){
+    background-color: #E9408F;
   }
   #chatBox{
     width: 30%;
-    border-radius: 20px;
     background-color: #EDEDED;
-    margin: 30px;
     padding: 0;
     overflow: hidden;
   font-size: 13px;
-    height: 95vh;
+    height: 100vh;
   }
 #chatBoxHeader{
   background-color: #C6C6C6;
@@ -360,6 +372,7 @@ position: relative;
   align-items: center;
   margin: 0;
   margin-left: 10px;
+  height: 8vh;
 }
 #chatBoxHeader div{
   
@@ -378,38 +391,50 @@ position: relative;
   cursor: pointer;
 }
 
-#messeges{
-  height: 77vh;
+#messages{
+  height: 82vh;
   overflow-y: scroll;
 }
 
-.messege {
+.message {
   display: flex;
   padding: 15px 20px;
   flex-direction: row;
 }
 
-.messege.you{
+.message.you{
   flex-direction: row-reverse;
 }
-.messege img {
+.message img,.message svg  {
   width: 60px;
   height: 60px;
   border-radius: 100%;
 }
+.message svg:nth-child(1){
+  background-color: teal;
+}
 
-.messege p {
+
+
+
+
+svg{
+  /* fill: red; */
+}
+
+.message p {
   background-color: #C6C6C6;
   border-radius: 20px;
   padding: 20px;
   margin: 5px 28px;
   margin-top:0px ;
   width: 70%;
+  white-space: break-spaces;
   
 
 }
 
-.messegeBox {
+.messageBox {
   
   background-color: whitesmoke;
   display: flex;
@@ -418,27 +443,32 @@ position: relative;
   padding: 20px;
 }
 
-.messegeBox textarea {
-  resize: vertical;
+.messageBox textarea {
+  display: flex;
   width: 75%;
   border-radius: 10px;
-  min-height: 60px;
+  min-height: 20px;
   margin: auto;
   margin-right: 80px;
+  
+}
+textarea::-webkit-scrollbar{
+  display: none;
 }
 
-.messegeBox img {
+.messageBox img {
   width: 60px;
   height: 60px;
   border-radius: 100%;
 
 }
 
-.messegeBox span {
+.messageBox span {
+  
   background-color: #C6C6C6;
   height: fit-content;
   position: absolute;
-  bottom: 30px;
+  bottom: 20px;
   right: 30px;
   padding: 10px;
   border-radius: 10px;

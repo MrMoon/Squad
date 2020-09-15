@@ -39,7 +39,7 @@ export class FeedComponent implements OnInit {
     console.log(elm.newComment);
     elm.comments.append
 
-elm.comments.push({ "name":"Mohammad Rimawi","imgSrc":"../assets/user.jpg","text":elm.newComment});
+elm.comments.push({ "name":"Mohammad Rimawi","imgSrc":"../assets/user.jpg","text":elm.newComment });
     this.Service.POST_COMMENT(elm)
   }
 

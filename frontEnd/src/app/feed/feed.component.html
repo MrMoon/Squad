@@ -49,9 +49,10 @@
 
           <div class="commentBox">
             <img src="../assets/user.jpg" alt="">
-            <textarea rows="1" (keyup)="post.newComment = commentArea.value" #commentArea (keydown.enter)="sendComment(post);commentArea.value=''"></textarea>
+            <textarea class="form-control" rows="2" (keyup)="post.newComment = commentArea.value" #commentArea (keyup.enter)="sendComment(post); commentArea.value=''; " oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
             <span (click)="sendComment(post);commentArea.value='' " >send</span>
           </div>
+          
 
         </div>
 
