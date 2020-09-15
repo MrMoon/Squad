@@ -1,0 +1,476 @@
+/* You can add global styles to this file, and also import other style files */
+
+chat{
+width: 33% !important;
+}
+ body {
+  transition: background-color .8s ease-in-out;
+  -webkit-transition: background-color 800ms ease-in-out;
+  -ms-transition: background-color 800ms ease-in-out;
+  transition: background-color 800ms ease-in-out;
+}
+
+.dark #feed {
+  background-color: #36393F !important;
+}
+
+.dark textarea {
+  background-color: #2B2C31 !important;
+  color: white !important;
+}
+
+
+.dark #chat {
+  background-color: #36393F !important;
+}
+
+
+.dark #mainBar {
+  background-color: #303237 !important;
+  color: white;
+}
+
+.dark #sideBar {
+  background-color: #2B2C31 !important;
+  color: white;
+}
+
+.dark .post {
+  background-color: #303237 !important;
+  color: white;
+}
+
+.dark .interactionPost div {
+  background-color: #303237 !important;
+  color: white;
+  border-color: #2B2C31;
+}
+
+.dark .interactionPost div:hover {
+  background-color: #2B2C31 !important;
+  color: white;
+  border-color: #2B2C31;
+}
+
+.dark #chatBox{
+  background-color: #303237 !important;
+  color: white;
+
+}
+
+.dark .message p{
+  background-color: #2A2C30 !important;
+  color: white;
+
+}
+
+.dark .comments p {
+  background-color: #2A2C30 !important;
+}
+.dark .comments  {
+  background-color: #303237 !important;
+}
+
+.dark .messageBox{
+  background-color: #303237 !important;
+}
+
+.dark .messageBox span{
+  background-color: white !important;
+  color: #2A2C30;
+}
+
+
+.dark .commentBox{
+  background-color: #303237 !important;
+}
+
+.dark .commentBox span{
+  background-color: white !important;
+  color: #2A2C30;
+}
+
+
+body{
+    padding: 0;
+    margin: 0;
+}
+*{
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+/* *::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 5px;
+    background-color:rgb(117, 105, 105);
+    height: 62px;
+  
+  }
+   
+   
+  *::-webkit-scrollbar-thumb {
+    background-color:#cc00fff8;
+    border-radius: 5px;
+  
+  } */
+
+  ::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+  }
+  ::-webkit-scrollbar-button {
+    width: 40px;
+    height: 40px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #949494;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ff4db5;
+  }
+  ::-webkit-scrollbar-thumb:active {
+    background: #ff00d4;
+  }
+  ::-webkit-scrollbar-track {
+    background: #7a7a7a42;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+  }
+  ::-webkit-scrollbar-track:hover {
+    background: #7a7a7a73;
+  }
+  ::-webkit-scrollbar-track:active {
+    background: #7a7a7a73;
+  }
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+
+
+  #feed {
+    width: 960px;
+    position: relative;
+    height: 100vh;
+    background-color: #C6C6C6;
+    padding: 0;
+    position: fixed;
+    z-index: 0;
+    margin-left: 395px;
+    padding-top: 50px;
+    overflow-y: scroll;
+  }
+
+ 
+
+  .post {
+    width: 80%;
+    height: fit-content;
+    margin:50px auto;
+    background-color: #EDEDED;
+    border-radius: 30px;
+    overflow: hidden;
+    -webkit-box-shadow: 0px 25px 27px -16px rgba(0, 0, 0, 0.158);
+-moz-box-shadow: 0px 25px 27px -16px rgba(0,0,0,0.158);
+box-shadow: 0px 25px 27px -16px rgba(0,0,0,0.158);
+    
+  }
+
+  .postInfo {
+    margin-bottom: 20px;
+  }
+
+  .postInfo img {
+    width: 80px;
+    border-radius: 100%;
+
+  }
+
+  .postInfo div {
+    padding-left: 10px;
+    position: relative;
+    top: +10px;
+    display: inline-block;
+  }
+
+  .postContent {
+    position: relative;
+    padding-bottom: 50px;
+  }
+
+  .postContent div {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .postContent div span {
+    margin: 10px;
+    cursor: pointer;
+  }
+
+  .postContent,
+  .postInfo {
+    margin: 30px;
+  }
+
+  .interactionPost div {
+    padding: 5px;
+    font-size: 30px;
+    text-align: center;
+    width: 50%;
+    background-color: #EDEDED;
+    border: 1px solid #DADADA;
+  }
+
+  .interactionPost div:hover {
+
+    background-color: #DADADA;
+    cursor: pointer;
+  }
+
+  .comments {
+    background-color: #EDEDED;
+    width: 100%;
+    height: fit-content;
+  }
+
+  .comment {
+    display: flex;
+    padding: 15px 20px;
+
+  }
+
+  .comment img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+  }
+
+  .comment p {
+    background-color: #C6C6C6;
+    border-radius: 20px;
+    padding: 20px;
+    margin-left: 20px;
+        white-space: break-spaces;
+
+  }
+
+  .commentBox {
+    background-color: whitesmoke;
+    display: flex;
+    position: relative;
+    padding: 20px;
+  }
+
+  .commentBox textarea {
+    resize: vertical;
+    width: 75%;
+    border-radius: 10px;
+    min-height: 40px;
+    margin: auto;
+    margin-right: 80px;
+  }
+
+  .commentBox img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+
+  }
+
+  .commentBox span {
+    background-color: #C6C6C6;
+    height: fit-content;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .hide {
+    display: none;
+  }
+
+
+.liked{
+  color: teal !important;
+}
+
+#chat {
+  width: 100%;
+  position: relative;
+  height: 100vh;
+  background-color: #DADADA;
+  padding: 0;
+  position: fixed;
+  z-index: 0;
+  margin-left: 1360px;
+
+}
+
+  #friendList{
+    height: 100vh;
+    width: 80px;
+    padding: 0!important;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  .user{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    margin:  15px auto;
+    cursor: pointer; 
+  }
+  span.user{
+    display: block;
+  }
+  span.user:nth-child(3n+3){
+    background-color: #5EC1CE;
+  }
+  span.user:nth-child(3n+2){
+    background-color: #46B381;
+  }
+  span.user:nth-child(3n+1){
+    background-color: #E9408F;
+  }
+  #chatBox{
+    width: 30%;
+    background-color: #EDEDED;
+    padding: 0;
+    overflow: hidden;
+  font-size: 13px;
+    height: 100vh;
+  }
+#chatBoxHeader{
+  background-color: #C6C6C6;
+padding: 10px;
+display: flex;
+position: relative;
+}
+
+#chatBoxHeader img{
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  align-items: center;
+  display: flex;
+  align-items: center;
+
+
+}
+#chatBoxHeader p{
+  
+  display: flex;
+  align-items: center;
+  margin: 0;
+  margin-left: 10px;
+  height: 8vh;
+}
+#chatBoxHeader div{
+  
+  display: flex;
+  position: absolute;
+  right: 20px;
+  height: fit-content;
+  
+}
+#chatBoxHeader span{
+  display: flexbox;
+  flex-direction: row;
+ font-size: 20pt;
+  margin: 10px;
+  align-items: flex-end;
+  cursor: pointer;
+}
+
+#messages{
+  height: 82vh;
+  overflow-y: scroll;
+}
+
+.message {
+  display: flex;
+  padding: 15px 20px;
+  flex-direction: row;
+}
+
+.message.you{
+  flex-direction: row-reverse;
+}
+.message img,.message svg  {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+}
+.message svg:nth-child(1){
+  background-color: teal;
+}
+
+
+
+
+
+svg{
+  /* fill: red; */
+}
+
+.message p {
+  background-color: #C6C6C6;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 5px 28px;
+  margin-top:0px ;
+  width: 70%;
+  white-space: break-spaces;
+  
+
+}
+
+.messageBox {
+  
+  background-color: whitesmoke;
+  display: flex;
+  position:sticky;
+  bottom: 0;
+  padding: 20px;
+}
+
+.messageBox textarea {
+  display: flex;
+  width: 75%;
+  border-radius: 10px;
+  min-height: 20px;
+  margin: auto;
+  margin-right: 80px;
+  
+}
+textarea::-webkit-scrollbar{
+  display: none;
+}
+
+.messageBox img {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+
+}
+
+.messageBox span {
+  
+  background-color: #C6C6C6;
+  height: fit-content;
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
