@@ -11,7 +11,7 @@
     <groupId>com.squad</groupId>
     <artifactId>post</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>post</name>
+    <name>squad-post</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

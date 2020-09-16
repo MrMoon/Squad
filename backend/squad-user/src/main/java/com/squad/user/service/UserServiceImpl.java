@@ -8,10 +8,10 @@ import io.confluent.ksql.api.client.Row;
 import io.confluent.ksql.api.client.StreamedQueryResult;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.apachecommons.CommonsLog;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 
 @Service
@@ -19,7 +19,6 @@ import java.util.concurrent.ExecutionException;
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
 
-    @Autowired
     private final UserProducer userProducer;
 
     @Override
@@ -38,13 +37,16 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void save(User user) {
+    public User save(User user) {
+        user.setUserId(UUID.randomUUID().toString());
         userProducer.produceUser(user.getUserId() , user);
+        return user;
     }
 
     @Override
-    public void update(User user) {
+    public User update(User user) {
         userProducer.produceUser(user.getUserId() , user);
+        return user;
     }
 
     @Override

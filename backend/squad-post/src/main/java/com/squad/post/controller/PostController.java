@@ -41,17 +41,12 @@ public class PostController {
 
     @PostMapping("/{postType}")
     public ResponseEntity<Post> createPost(@PathVariable("postType") String postType , @RequestBody Post post) {
-        ;
         return ResponseEntity.ok(this.postService.save(post , postType));
     }
 
     @PutMapping("/{postType}")
     public ResponseEntity<Post> updatePost(@PathVariable("postType") String postType , @RequestBody @NotNull Post post) {
-        PostEvent postEvent = new PostEvent();
-        postEvent.setEventId(UUID.randomUUID().toString());
-        postEvent.setPost(post);
-        postEvent.setPostEventType(PostEventType.POST_UPDATED);
-        return ResponseEntity.ok(this.postService.save(post , postType));
+        return ResponseEntity.ok(this.postService.update(post , postType));
     }
 
     @DeleteMapping("/{postId}")

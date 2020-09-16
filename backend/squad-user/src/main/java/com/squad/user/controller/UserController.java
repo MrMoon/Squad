@@ -8,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.UUID;
-
 @RestController
 @RequestMapping(value = "/user")
 @RequiredArgsConstructor
@@ -24,16 +22,13 @@ public class UserController {
     }
 
     @PostMapping(value = "/create")
-    public ResponseEntity<String> createUser(@NotNull @RequestBody User user) {
-        user.setUserId(UUID.randomUUID().toString());
-        userService.save(user);
-        return ResponseEntity.ok(user.toString());
+    public ResponseEntity<User> createUser(@NotNull @RequestBody User user) {
+        return ResponseEntity.ok(this.userService.save(user));
     }
 
     @PutMapping
     public ResponseEntity<User> updateUser(@NotNull @RequestBody User user) {
-        userService.update(user);
-        return ResponseEntity.ok(user);
+        return ResponseEntity.ok(this.userService.update(user));
     }
 
     @DeleteMapping("/{userId}")

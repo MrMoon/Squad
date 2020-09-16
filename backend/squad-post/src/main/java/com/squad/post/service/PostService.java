@@ -12,6 +12,7 @@ public interface PostService {
     boolean likePost(String postId);
     boolean unlikePost(String postId);
     Post save(Post post , String postType);
+    Post update(Post post , String postType);
     boolean delete(String postId);
 
 }

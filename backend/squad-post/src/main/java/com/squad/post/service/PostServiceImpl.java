@@ -40,13 +40,23 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public Post save(Post post , String postType) {
+        return this.produce(post , postType , PostEventType.POST_CREATED);
+    }
+
+    @Override
+    public Post update(Post post , String postType) {
+        return this.produce(post , postType , PostEventType.POST_UPDATED);
+    }
+
+    private Post produce(Post post , String postType , PostEventType postEventType) {
         postType = postType.toUpperCase();
         post.setPostType(PostType.valueOf(postType));
+        post.setPostId(UUID.randomUUID().toString());
         PostEvent postEvent = new PostEvent();
         postEvent.setEventId(UUID.randomUUID().toString());
         postEvent.setPost(post);
-        postEvent.setPostEventType(PostEventType.POST_CREATED);
-        this.postProducer.producerPostEvent(postEvent.getEventId() , postEvent);
+        postEvent.setPostEventType(PostEventType.POST_UPDATED);
+        this.postProducer.producerPostEvent(post.getPostId() , postEvent);
         return post;
     }
 
