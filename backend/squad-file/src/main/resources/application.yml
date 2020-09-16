@@ -1,0 +1,5 @@
+amazonProperties:
+  endpointUrl: https://s3.us-east-2.amazonaws.com
+  accessKey: AKIAJGGBDQLQPVSXTLYQ
+  secretKey: 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
+  bucketName: squad
