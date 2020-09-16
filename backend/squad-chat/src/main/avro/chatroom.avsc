@@ -1,0 +1,39 @@
+{
+  "type" : "record",
+  "name" : "ChatroomEvent",
+  "namespace" : "com.squad.chat.model",
+  "fields" : [ {
+    "name" : "eventId",
+    "type" : "string"
+  } , {
+    "name" : "chatroom",
+    "type" : {
+      "type" : "record",
+      "name" : "Chatroom",
+      "fields" : [ {
+        "name" : "chatroomId",
+        "type" : "string"
+      }, {
+        "name" : "userId",
+        "type" : "string"
+      } , {
+        "name" : "messageId",
+        "type" : "string"
+      } , {
+        "name": "isPublic",
+        "type": "boolean"
+      }]
+    }
+  } , {
+      "name": "ChatroomEventType",
+      "type": {
+            "name": "ChatroomEventType",
+            "type": "enum",
+            "symbols": [
+              "CHATROOM_CREATED",
+              "CHATROOM_UPDATED",
+              "CHATROOM_USER_ADDED"
+            ]
+          }
+    } ]
+}

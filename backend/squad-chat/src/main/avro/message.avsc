@@ -1,0 +1,41 @@
+{
+  "type" : "record",
+  "name" : "MessageEvent",
+  "namespace" : "com.squad.chat.model",
+  "fields" : [ {
+    "name" : "eventId",
+    "type" : "string"
+  } , {
+    "name" : "message",
+    "type" : {
+      "type" : "record",
+      "name" : "Message",
+      "fields" : [ {
+        "name" : "messageId",
+        "type" : "string"
+      }, {
+        "name" : "userId",
+        "type" : "string"
+      } , {
+        "name" : "senderId",
+        "type" : "string"
+      } , {
+        "name": "roomId",
+        "type": "string"
+      }, {
+        "name" : "text",
+        "type" : "string"
+      }]
+    }
+  } , {
+      "name": "MessageEventType",
+      "type": {
+            "name": "MessageEventType",
+            "type": "enum",
+            "symbols": [
+              "MESSAGE_SEND",
+              "MESSAGE_NOFITICATION"
+            ]
+          }
+    } ]
+}
