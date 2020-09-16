@@ -1,0 +1,32 @@
+{
+  "namespace": "com.squad.user.model",
+  "type": "record",
+  "name": "User",
+  "fields": [
+    {
+      "name": "firstName",
+      "type": "string",
+      "avro.java.string": "String"
+    } , {
+      "name": "lastName",
+      "type": "string",
+      "avro.java.string": "String"
+    } , {
+       "name": "userId",
+       "type": "string",
+       "avro.java.string": "String"
+    } , {
+        "name": "email",
+        "type": "string",
+        "avro.java.string": "String"
+    } , {
+        "name": "birthday",
+        "type": "string",
+        "avro.java.string": "String"
+    } , {
+         "name": "imageUrl",
+         "type": ["string" , "null"],
+         "avro.java.string": "String"
+    }
+  ]
+}
