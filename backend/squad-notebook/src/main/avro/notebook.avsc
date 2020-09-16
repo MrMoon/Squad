@@ -1,0 +1,55 @@
+{
+  "type" : "record",
+  "name" : "NotebookEvent",
+  "namespace" : "com.squad.notebook.model",
+  "fields" : [ {
+    "name" : "eventId",
+    "type" : "string"
+  } , {
+    "name" : "notebook",
+    "type" : {
+      "type" : "record",
+      "name" : "Notebook",
+      "fields" : [ {
+        "name" : "notebookId",
+        "type" : "string"
+      }, {
+        "name" : "userId",
+        "type" : "string"
+      } , {
+        "name" : "groupId",
+        "type" : "string"
+      } , {
+        "name": "name",
+        "type": "string"
+      }, {
+        "name" : "noteId",
+        "type" : "string"
+      } , {
+        "name": "isPublic",
+        "type": "boolean"
+      } , {
+          "name": "NotebookType",
+          "type": {
+                "name": "NotebookType",
+                "type": "enum",
+                "symbols": [
+                  "NOTEBOOK",
+                  "GROUP_NOTEBOOK"
+                ]
+              }
+        }]
+    }
+  } , {
+      "name": "NotebookEventType",
+      "type": {
+            "name": "NotebookEventType",
+            "type": "enum",
+            "symbols": [
+              "NOTEBOOK_CREATED",
+              "NOTEBOOK_UPDATED",
+              "NOTEBOOK_DELETED"
+            ]
+          }
+    } ]
+}

@@ -13,7 +13,7 @@ public class FriendEventServiceImpl implements FriendEventService {
 
     @Override
     public void save(FriendEvent friendEvent) {
-        friendEventProducer.producerFriendEvent(friendEvent.getEventId() , friendEvent);
+        friendEventProducer.producerFriendEvent(friendEvent.getFriendConnection().getUserId() , friendEvent);
     }
 
     @Override

@@ -1,0 +1,59 @@
+{
+  "type" : "record",
+  "name" : "NoteEvent",
+  "namespace" : "com.squad.notebook.model",
+  "fields" : [ {
+    "name" : "eventId",
+    "type" : "string"
+  } , {
+    "name" : "note",
+    "type" : {
+      "type" : "record",
+      "name" : "Note",
+      "fields" : [ {
+        "name" : "noteId",
+        "type" : "string"
+      }, {
+        "name" : "userId",
+        "type" : "string"
+      } , {
+        "name" : "name",
+        "type" : "string"
+      } , {
+        "name": "groupId",
+        "type": "string"
+      }, {
+        "name" : "text",
+        "type" : "string"
+      } , {
+        "name": "isPublic",
+        "type": "boolean"
+      } , {
+         "name": "isNotifiable",
+         "type": "boolean"
+      } , {
+          "name": "NoteType",
+          "type": {
+                "name": "NoteType",
+                "type": "enum",
+                "symbols": [
+                  "NOTE",
+                  "TASK"
+                ]
+              }
+        }]
+    }
+  } , {
+      "name": "NoteEventType",
+      "type": {
+            "name": "NoteEventType",
+            "type": "enum",
+            "symbols": [
+              "NOTE_CREATED",
+              "NOTE_UPDATED",
+              "NOTE_DELETED",
+              "NOTE_NOTIFICATION"
+            ]
+          }
+    } ]
+}

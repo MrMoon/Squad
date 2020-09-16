@@ -1,0 +1,50 @@
+topic-note:
+  name: note
+  partitions-num: 3
+  replication-factor: 3
+
+topic-notebook:
+  name: notebook
+  partitions-num: 3
+  replication-factor: 3
+
+ksql:
+  host: localhost
+  port: 8088
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:8079/eureka
+  instance:
+    hostname: localhost
+
+server:
+  port: 9083
+
+spring:
+  kafka:
+    properties:
+      bootstrap.servers: localhost:9092
+      schema.registry.url: http://localhost:8081
+    consumer:
+      group-id: orgnizer-microservice
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      properties:
+        bootstrap.servers: localhost:9092
+        specific.avro.reader: true
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+      properties:
+        bootstrap.servers: localhost:9092
+    template:
+      default-topic:
+
+logging:
+  level:
+    root: info
