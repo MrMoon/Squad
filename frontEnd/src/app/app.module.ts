@@ -10,6 +10,7 @@ import { ChatComponent } from './chat/chat.component';
 import { UserComponent } from './user/user.component';
 import { GroupComponent } from './group/group.component';
 import { EmptyComponent } from './empty/empty.component';
+import { OrganizerComponent } from './organizer/organizer.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { EmptyComponent } from './empty/empty.component';
     ChatComponent,
     UserComponent,
     GroupComponent,
-    EmptyComponent
+    EmptyComponent,
+    OrganizerComponent
   ],
   imports: [
     BrowserModule,

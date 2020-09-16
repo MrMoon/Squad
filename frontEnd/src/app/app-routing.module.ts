@@ -3,19 +3,22 @@ import { FeedComponent } from './feed/feed.component';
 import { ChatComponent } from './chat/chat.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { OrganizerComponent } from './organizer/organizer.component';
 
 const routes: Routes = [
   {
+    path:'organizer/:noteID',component:OrganizerComponent ,outlet:'one'
+  } , {
     path:'feed/:groupID',component:FeedComponent ,outlet:'one'
   } ,
   {
-    path:'feed',component:FeedComponent ,outlet:'two'
+    path:'feed/:groupID',component:FeedComponent ,outlet:'two'
   },
   {
-    path:'chat',component:ChatComponent ,outlet:'one'
+    path:'chat/:roomID',component:ChatComponent ,outlet:'one'
   } ,
   {
-    path:'chat',component:ChatComponent ,outlet:'two'
+    path:'chat/:roomID',component:ChatComponent ,outlet:'two'
   } ,  {
     path:'empty',component:EmptyComponent ,outlet:'two'
   } ,  {
