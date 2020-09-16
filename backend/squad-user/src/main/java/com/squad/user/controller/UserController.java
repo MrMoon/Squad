@@ -4,7 +4,6 @@ import com.squad.user.model.User;
 import com.squad.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,10 +12,9 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class UserController {
 
-    @Autowired
     private final UserService userService;
 
-    @GetMapping(value = "/{S}")
+    @GetMapping(value = "/{userId}")
     public ResponseEntity<User> getUserById(@NotNull @PathVariable("userId") String userId) {
         return userService.getUserByUserId(userId).map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
