@@ -1,0 +1,32 @@
+{
+  "type" : "record",
+  "name" : "FriendEvent",
+  "namespace" : "com.squad.friend.model",
+  "fields" : [ {
+    "name" : "eventId",
+    "type" : "string"
+  } , {
+    "name" : "FriendConnection",
+    "type" : {
+      "type" : "record",
+      "name" : "Friend",
+      "fields" : [ {
+        "name" : "userId",
+        "type" : "string"
+      }, {
+        "name" : "friendId",
+        "type" : "string"
+      } ]
+    }
+  } , {
+    "name": "friendEventType",
+    "type": {
+          "name": "FriendEventType",
+          "type": "enum",
+          "symbols": [
+            "FRIEND_ADDED",
+            "FRIEND_REMOVE"
+          ]
+        }
+  } ]
+}

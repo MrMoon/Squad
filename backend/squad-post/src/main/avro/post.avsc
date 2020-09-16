@@ -1,0 +1,64 @@
+{
+  "type" : "record",
+  "name" : "PostEvent",
+  "namespace" : "com.squad.post.model",
+  "fields" : [ {
+    "name" : "eventId",
+    "type" : "string"
+  } , {
+    "name" : "Post",
+    "type" : {
+      "type" : "record",
+      "name" : "Post",
+      "fields" : [ {
+        "name" : "postId",
+        "type" : "string"
+      }, {
+        "name" : "userId",
+        "type" : "string"
+      } , {
+        "name" : "groupId",
+        "type" : "string"
+      } , {
+        "name": "documentId",
+        "type": "string"
+      }, {
+        "name" : "text",
+        "type" : "string"
+      } , {
+        "name": "isNotifiable",
+        "type": "boolean"
+      } , {
+        "name": "isPublic",
+        "type": "boolean"
+      } , {
+          "name": "PostType",
+          "type": {
+                "name": "PostType",
+                "type": "enum",
+                "symbols": [
+                  "NORMAL",
+                  "DOCUMENT",
+                  "QNA",
+                  "ANNOUNCEMENTS",
+                  "EVENTS"
+                ]
+              }
+        }]
+    }
+  } , {
+      "name": "PostEventType",
+      "type": {
+            "name": "PostEventType",
+            "type": "enum",
+            "symbols": [
+              "POST_CREATED",
+              "POST_UPDATED",
+              "POST_LIKED",
+              "POST_UNLIKED",
+              "POST_DELETED",
+              "POST_NOTIFICATION"
+            ]
+          }
+    } ]
+}
