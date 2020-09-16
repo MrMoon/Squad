@@ -15,4 +15,9 @@ export class FeedService {
     console.log("CommentPosted");
 
   }
+
+  CREATE_POST(elm){
+    console.log("PostCreated");
+
+  }
 }

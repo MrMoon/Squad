@@ -1,8 +1,10 @@
-<div id="chatBox" class=" col-auto">
+<div class="row">
+
+<div id="chatBox" class=" col">
   <div id=chatBoxHeader>
 
-    <img src="../assets/user.jpg" alt="">
-    <p>Mohammad Rimawi</p>
+    <img src="../assets/laith.jpg" alt="">
+    <p>Laith Saqqa</p>
     <div>
 
       <span>
@@ -33,12 +35,10 @@
 
 
     <div class="message" *ngFor="let message of messages" [class.you]="message.isYou">
-
-                <span>
+                <!-- <span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54.03 54.03"><defs><style>.cls-1{fill:#ffffff;}.cls-2{fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:1.25px;}</style></defs><title>Defult</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><circle class="cls-1" cx="27.02" cy="21.25" r="5.61"/><path class="cls-1" d="M34.79,38.38H19.24V33c0-5.93,15.55-5.93,15.55,0Z"/><circle class="cls-2" cx="27.02" cy="27.02" r="26.39"/></g></g></svg>
-                </span>
-                        
-                        <!-- <img src="{{message.senderImg}}" alt=""> -->
+                </span> -->
+                        <img src="{{message.senderImg}}" alt="">
         
       <p>{{message.message}}</p>
     </div>
@@ -54,27 +54,18 @@
 
 </div>
 <div class="col-auto" id="friendList">
+  <span class="user"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54.03 54.03"><defs><style>.cls-1{fill:#ffffff;}.cls-2{fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:1.25px;}</style></defs><title>Defult</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><circle class="cls-1" cx="27.02" cy="21.25" r="5.61"/><path class="cls-1" d="M34.79,38.38H19.24V33c0-5.93,15.55-5.93,15.55,0Z"/><circle class="cls-2" cx="27.02" cy="27.02" r="26.39"/></g></g></svg></span>
+  <span class="user"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54.03 54.03"><defs><style>.cls-1{fill:#ffffff;}.cls-2{fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:1.25px;}</style></defs><title>Defult</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><circle class="cls-1" cx="27.02" cy="21.25" r="5.61"/><path class="cls-1" d="M34.79,38.38H19.24V33c0-5.93,15.55-5.93,15.55,0Z"/><circle class="cls-2" cx="27.02" cy="27.02" r="26.39"/></g></g></svg></span>
+  <span class="user"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54.03 54.03"><defs><style>.cls-1{fill:#ffffff;}.cls-2{fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:1.25px;}</style></defs><title>Defult</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><circle class="cls-1" cx="27.02" cy="21.25" r="5.61"/><path class="cls-1" d="M34.79,38.38H19.24V33c0-5.93,15.55-5.93,15.55,0Z"/><circle class="cls-2" cx="27.02" cy="27.02" r="26.39"/></g></g></svg></span>
+  <span class="user"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54.03 54.03"><defs><style>.cls-1{fill:#ffffff;}.cls-2{fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:1.25px;}</style></defs><title>Defult</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><circle class="cls-1" cx="27.02" cy="21.25" r="5.61"/><path class="cls-1" d="M34.79,38.38H19.24V33c0-5.93,15.55-5.93,15.55,0Z"/><circle class="cls-2" cx="27.02" cy="27.02" r="26.39"/></g></g></svg></span>
+        <span class="user"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54.03 54.03"><defs><style>.cls-1{fill:#ffffff;}.cls-2{fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:1.25px;}</style></defs><title>Defult</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><circle class="cls-1" cx="27.02" cy="21.25" r="5.61"/><path class="cls-1" d="M34.79,38.38H19.24V33c0-5.93,15.55-5.93,15.55,0Z"/><circle class="cls-2" cx="27.02" cy="27.02" r="26.39"/></g></g></svg></span>
+        <span class="user"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54.03 54.03"><defs><style>.cls-1{fill:#ffffff;}.cls-2{fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:1.25px;}</style></defs><title>Defult</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><circle class="cls-1" cx="27.02" cy="21.25" r="5.61"/><path class="cls-1" d="M34.79,38.38H19.24V33c0-5.93,15.55-5.93,15.55,0Z"/><circle class="cls-2" cx="27.02" cy="27.02" r="26.39"/></g></g></svg></span>
+       <span class="user"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54.03 54.03"><defs><style>.cls-1{fill:#ffffff;}.cls-2{fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:1.25px;}</style></defs><title>Defult</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><circle class="cls-1" cx="27.02" cy="21.25" r="5.61"/><path class="cls-1" d="M34.79,38.38H19.24V33c0-5.93,15.55-5.93,15.55,0Z"/><circle class="cls-2" cx="27.02" cy="27.02" r="26.39"/></g></g></svg></span>
         <span class="user"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54.03 54.03"><defs><style>.cls-1{fill:#ffffff;}.cls-2{fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:1.25px;}</style></defs><title>Defult</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><circle class="cls-1" cx="27.02" cy="21.25" r="5.61"/><path class="cls-1" d="M34.79,38.38H19.24V33c0-5.93,15.55-5.93,15.55,0Z"/><circle class="cls-2" cx="27.02" cy="27.02" r="26.39"/></g></g></svg></span>
         <span class="user"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54.03 54.03"><defs><style>.cls-1{fill:#ffffff;}.cls-2{fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:1.25px;}</style></defs><title>Defult</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><circle class="cls-1" cx="27.02" cy="21.25" r="5.61"/><path class="cls-1" d="M34.79,38.38H19.24V33c0-5.93,15.55-5.93,15.55,0Z"/><circle class="cls-2" cx="27.02" cy="27.02" r="26.39"/></g></g></svg></span>
         <span class="user"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54.03 54.03"><defs><style>.cls-1{fill:#ffffff;}.cls-2{fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:1.25px;}</style></defs><title>Defult</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><circle class="cls-1" cx="27.02" cy="21.25" r="5.61"/><path class="cls-1" d="M34.79,38.38H19.24V33c0-5.93,15.55-5.93,15.55,0Z"/><circle class="cls-2" cx="27.02" cy="27.02" r="26.39"/></g></g></svg></span>
         <span class="user"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54.03 54.03"><defs><style>.cls-1{fill:#ffffff;}.cls-2{fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:1.25px;}</style></defs><title>Defult</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><circle class="cls-1" cx="27.02" cy="21.25" r="5.61"/><path class="cls-1" d="M34.79,38.38H19.24V33c0-5.93,15.55-5.93,15.55,0Z"/><circle class="cls-2" cx="27.02" cy="27.02" r="26.39"/></g></g></svg></span>
-
-
-  <img src="../assets/user.jpg" class="user" alt="">
-  <img src="../assets/user.jpg" class="user" alt="">
-  <img src="../assets/user.jpg" class="user" alt="">
-  <img src="../assets/user.jpg" class="user" alt="">
-  <img src="../assets/user.jpg" class="user" alt="">
-  <img src="../assets/user.jpg" class="user" alt="">
-  <img src="../assets/user.jpg" class="user" alt="">
-  <img src="../assets/user.jpg" class="user" alt="">
-  <img src="../assets/user.jpg" class="user" alt="">
-  <img src="../assets/user.jpg" class="user" alt="">
-  <img src="../assets/user.jpg" class="user" alt="">
-  <img src="../assets/user.jpg" class="user" alt="">
-  <img src="../assets/user.jpg" class="user" alt="">
-  <img src="../assets/user.jpg" class="user" alt="">
-  <img src="../assets/user.jpg" class="user" alt="">
-
-
+        <span class="user"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54.03 54.03"><defs><style>.cls-1{fill:#ffffff;}.cls-2{fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:1.25px;}</style></defs><title>Defult</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><circle class="cls-1" cx="27.02" cy="21.25" r="5.61"/><path class="cls-1" d="M34.79,38.38H19.24V33c0-5.93,15.55-5.93,15.55,0Z"/><circle class="cls-2" cx="27.02" cy="27.02" r="26.39"/></g></g></svg></span>
+        <span class="user"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54.03 54.03"><defs><style>.cls-1{fill:#ffffff;}.cls-2{fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:1.25px;}</style></defs><title>Defult</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><circle class="cls-1" cx="27.02" cy="21.25" r="5.61"/><path class="cls-1" d="M34.79,38.38H19.24V33c0-5.93,15.55-5.93,15.55,0Z"/><circle class="cls-2" cx="27.02" cy="27.02" r="26.39"/></g></g></svg></span>
+</div>
 </div>

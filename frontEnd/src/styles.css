@@ -1,13 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
-chat{
-width: 33% !important;
-}
+
  body {
   transition: background-color .8s ease-in-out;
   -webkit-transition: background-color 800ms ease-in-out;
   -ms-transition: background-color 800ms ease-in-out;
   transition: background-color 800ms ease-in-out;
+  position: relative;
 }
 
 .dark #feed {
@@ -152,18 +151,7 @@ body{
 
 
 
-  #feed {
-    width: 960px;
-    position: relative;
-    height: 100vh;
-    background-color: #C6C6C6;
-    padding: 0;
-    position: fixed;
-    z-index: 0;
-    margin-left: 395px;
-    padding-top: 50px;
-    overflow-y: scroll;
-  }
+
 
  
 
@@ -200,6 +188,7 @@ box-shadow: 0px 25px 27px -16px rgba(0,0,0,0.158);
   .postContent {
     position: relative;
     padding-bottom: 50px;
+    white-space: break-spaces;
   }
 
   .postContent div {
@@ -259,11 +248,29 @@ box-shadow: 0px 25px 27px -16px rgba(0,0,0,0.158);
 
   }
 
-  .commentBox {
+  .commentBox{
     background-color: whitesmoke;
     display: flex;
     position: relative;
     padding: 20px;
+  }
+
+  .newPost{
+        background-color: whitesmoke;
+        padding: 20px 50px;
+        
+        
+
+  }
+
+  .newPost span{
+    background-color: #C6C6C6;
+    height: fit-content;
+    display: flex;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
   }
 
   .commentBox textarea {
@@ -302,17 +309,7 @@ box-shadow: 0px 25px 27px -16px rgba(0,0,0,0.158);
   color: teal !important;
 }
 
-#chat {
-  width: 100%;
-  position: relative;
-  height: 100vh;
-  background-color: #DADADA;
-  padding: 0;
-  position: fixed;
-  z-index: 0;
-  margin-left: 1360px;
 
-}
 
   #friendList{
     height: 100vh;
@@ -341,8 +338,9 @@ box-shadow: 0px 25px 27px -16px rgba(0,0,0,0.158);
   span.user:nth-child(3n+1){
     background-color: #E9408F;
   }
+
+
   #chatBox{
-    width: 30%;
     background-color: #EDEDED;
     padding: 0;
     overflow: hidden;
@@ -350,7 +348,7 @@ box-shadow: 0px 25px 27px -16px rgba(0,0,0,0.158);
     height: 100vh;
   }
 #chatBoxHeader{
-  background-color: #C6C6C6;
+  background-color: whitesmoke;
 padding: 10px;
 display: flex;
 position: relative;

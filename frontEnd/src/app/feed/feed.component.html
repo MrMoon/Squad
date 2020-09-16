@@ -1,4 +1,8 @@
     <div>
+      <div class="post newPost">
+      <textarea rows="2" name="text" class="form-control" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' #newPostArea ></textarea>
+      <span (click)="createPost(newPostArea.value);newPostArea.value='' " >Post</span>
+  </div>
 
       <div class="post" *ngFor="let post of posts">
         <div class="postInfo">

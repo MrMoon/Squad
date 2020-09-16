@@ -13,16 +13,20 @@ export class ChatService {
     return[{
       isYou:false,
       senderID:1,
-      senderImg:"../assets/user.jpg",
-      message:"Lorem Ipsum",
+      senderImg:"../assets/laith.jpg",
+      message:
+`Rimawi
+`,
       time:""
-      },
-      {
-        isYou:true,
+      },{
+        isYou:false,
         senderID:1,
-        senderImg:"../assets/Defult.svg",
-        message:"Lorem Ipsum",
+        senderImg:"../assets/laith.jpg",
+        message:
+`Can you share the OOP documents with me?
+`,
         time:""
-        }];
+        }
+      ];
   }
 }
