@@ -6,6 +6,7 @@
   -webkit-transition: background-color 800ms ease-in-out;
   -ms-transition: background-color 800ms ease-in-out;
   transition: background-color 800ms ease-in-out;
+  position: relative;
 }
 
 .dark #feed {
@@ -187,6 +188,7 @@ box-shadow: 0px 25px 27px -16px rgba(0,0,0,0.158);
   .postContent {
     position: relative;
     padding-bottom: 50px;
+    white-space: break-spaces;
   }
 
   .postContent div {
@@ -246,11 +248,29 @@ box-shadow: 0px 25px 27px -16px rgba(0,0,0,0.158);
 
   }
 
-  .commentBox {
+  .commentBox{
     background-color: whitesmoke;
     display: flex;
     position: relative;
     padding: 20px;
+  }
+
+  .newPost{
+        background-color: whitesmoke;
+        padding: 20px 50px;
+        
+        
+
+  }
+
+  .newPost span{
+    background-color: #C6C6C6;
+    height: fit-content;
+    display: flex;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
   }
 
   .commentBox textarea {
@@ -318,6 +338,8 @@ box-shadow: 0px 25px 27px -16px rgba(0,0,0,0.158);
   span.user:nth-child(3n+1){
     background-color: #E9408F;
   }
+
+
   #chatBox{
     background-color: #EDEDED;
     padding: 0;
@@ -326,7 +348,7 @@ box-shadow: 0px 25px 27px -16px rgba(0,0,0,0.158);
     height: 100vh;
   }
 #chatBoxHeader{
-  background-color: #C6C6C6;
+  background-color: whitesmoke;
 padding: 10px;
 display: flex;
 position: relative;

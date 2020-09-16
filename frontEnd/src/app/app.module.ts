@@ -7,6 +7,9 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { FeedComponent } from './feed/feed.component';
 import { PostComponent } from './feed/post/post.component';
 import { ChatComponent } from './chat/chat.component';
+import { UserComponent } from './user/user.component';
+import { GroupComponent } from './group/group.component';
+import { EmptyComponent } from './empty/empty.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { ChatComponent } from './chat/chat.component';
     NavigationComponent,
     FeedComponent,
     PostComponent,
-    ChatComponent
+    ChatComponent,
+    UserComponent,
+    GroupComponent,
+    EmptyComponent
   ],
   imports: [
     BrowserModule,

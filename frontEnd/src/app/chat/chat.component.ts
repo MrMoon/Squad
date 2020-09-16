@@ -15,7 +15,7 @@ newMessage;
 
     sendMessage(text){
       console.log(text);
-      this.messages.push({ "isYou":"true","senderID":"1", "senderImg":"../assets/Defult.svg","message":text,"time":""});
+      this.messages.push({ "isYou":"true","senderID":"1", "senderImg":"../assets/user.jpg","message":text,"time":""});
 
     }
   ngOnInit(): void {
