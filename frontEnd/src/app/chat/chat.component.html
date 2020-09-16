@@ -3,8 +3,8 @@
 <div id="chatBox" class=" col">
   <div id=chatBoxHeader>
 
-    <img src="../assets/laith.jpg" alt="">
-    <p>Laith Saqqa</p>
+    <!-- <img src="../assets/laith.jpg" alt=""> -->
+    <p style="font-size: large; margin-left: 40px;">#room1</p>
     <div>
 
       <span>
@@ -48,7 +48,7 @@
   </div>
 
   <div class="messageBox">
-        <textarea rows="2" name="text" class="form-control" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' #messageArea  (keyup.enter)="sendMessage(messageArea.value);messageArea.value=''"></textarea>
+        <textarea rows="2" name="text" class="form-control" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' #messageArea  (keyup.enter)="sendMessage(messageArea.value);messageArea.value=''" ></textarea>
         <span  (click)="sendMessage(messageArea.value);messageArea.value='' " >send</span>
   </div>
 

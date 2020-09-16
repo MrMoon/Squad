@@ -1,5 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { ChatService } from './chat.service';
+export var msgs=[{
+  isYou:false,
+  senderID:1,
+  senderImg:"../assets/laith.jpg",
+  message:
+`Hello!
+`,
+  time:""
+  },{
+    isYou:false,
+    senderID:1,
+    senderImg:"../assets/laith.jpg",
+    message:
+`Can anyone share the OOP notes with me?
+`,
+    time:""
+    }
+  ];
 
 @Component({
   selector: 'chat',
@@ -8,15 +26,15 @@ import { ChatService } from './chat.service';
 })
 export class ChatComponent implements OnInit {
   messages;
-newMessage;
+  newMessage;
   constructor(msgService:ChatService) {
-    this.messages=msgService.getMessages(1);
+    this.messages=msgs;
   }
 
     sendMessage(text){
       console.log(text);
-      this.messages.push({ "isYou":"true","senderID":"1", "senderImg":"../assets/user.jpg","message":text,"time":""});
-
+     msgs.push({ "isYou":true,"senderID":1, "senderImg":"../assets/user.jpg","message":text,"time":""});
+      this.messages=msgs;
     }
   ngOnInit(): void {
   }

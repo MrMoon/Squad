@@ -10,23 +10,6 @@ export class ChatService {
   getMessages(roomID){
     roomID=0;
 
-    return[{
-      isYou:false,
-      senderID:1,
-      senderImg:"../assets/laith.jpg",
-      message:
-`Rimawi
-`,
-      time:""
-      },{
-        isYou:false,
-        senderID:1,
-        senderImg:"../assets/laith.jpg",
-        message:
-`Can you share the OOP documents with me?
-`,
-        time:""
-        }
-      ];
+    return 
   }
 }

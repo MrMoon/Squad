@@ -24,4 +24,18 @@
 </style>
 
 
-<textarea class="notePage" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}"></textarea>
+<textarea class="notePage" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}">
+C++ Notes:
+
+#include <iostream>
+    using namespace std;
+    int main() {
+       Adder a;
+       a.addNum(10);
+       a.addNum(20);
+       a.addNum(30);
+       cout << "Total " << a.getTotal() <<endl;
+       return 0;
+    }
+
+</textarea>
