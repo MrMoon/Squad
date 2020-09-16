@@ -25,8 +25,8 @@ public class UserApplication {
     @Bean
     NewTopic userTopic() {
         return TopicBuilder.name(topicName)
-                .partitions(partitions)
-                .replicas(replicationFactor)
+                .partitions((short) 3)
+                .replicas((short) 3)
                 .config(TopicConfig.RETENTION_MS_CONFIG, "-1")
                 .compact()
                 .build();

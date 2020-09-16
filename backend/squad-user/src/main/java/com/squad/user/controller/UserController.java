@@ -15,18 +15,20 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping(value = "/{userId}")
-    public ResponseEntity<User> getUserById(@NotNull @PathVariable("userId") String userId) {
-        return userService.getUserByUserId(userId).map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    public ResponseEntity<String> getUserById(@NotNull @PathVariable("userId") String userId) {
+        //userService.getUserByUserId(userId).map(value -> ResponseEntity.ok(value.toString())).orElseGet(() -> ResponseEntity.notFound().build());
+        this.userService.getUserByUserId(userId);
+        return ResponseEntity.ok(userId);
     }
 
     @PostMapping(value = "/create")
-    public ResponseEntity<User> createUser(@NotNull @RequestBody User user) {
-        return ResponseEntity.ok(this.userService.save(user));
+    public ResponseEntity<String> createUser(@NotNull @RequestBody User user) {
+        return ResponseEntity.ok(this.userService.save(user).toString());
     }
 
     @PutMapping
-    public ResponseEntity<User> updateUser(@NotNull @RequestBody User user) {
-        return ResponseEntity.ok(this.userService.update(user));
+    public ResponseEntity<String> updateUser(@NotNull @RequestBody User user) {
+        return ResponseEntity.ok(this.userService.update(user).toString());
     }
 
     @DeleteMapping("/{userId}")
