@@ -65,7 +65,6 @@
 						<image>squad-config:squad</image>
 						<tags>
 							<tag>latest</tag>
-							<tag>${project.version}</tag>
 						</tags>
 					</to>
 					<container>
