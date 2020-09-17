@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+
+  squad-config:
+    image: squad-config
+    container_name: config-server
+    restart: always
+    ports:
+      - 8066:8066
+
+  squad-discovery:
+    image: squad-discovery
+    container_name: discovery-server
+    restart: always
+    depends_on:
+      - squad-config
+    ports:
+      - 8079:8079
+    links:
+      - squad-config:squad-config
+
+networks:
+  default:
+    external:
+      name: squad

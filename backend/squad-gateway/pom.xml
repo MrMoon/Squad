@@ -43,6 +43,26 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.nimbusds</groupId>
+            <artifactId>nimbus-jose-jwt</artifactId>
+            <version>4.23</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>15.0</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
@@ -71,6 +91,9 @@
                     <to>
                         <image>squad-gateway</image>
                     </to>
+                    <tags>
+                        <tag>latest</tag>
+                    </tags>
                 </configuration>
             </plugin>
         </plugins>
