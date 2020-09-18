@@ -3,6 +3,7 @@ package com.squad.gateway.config.security;
 import com.nimbusds.jose.proc.SecurityContext;
 import com.nimbusds.jwt.proc.ConfigurableJWTProcessor;
 import com.squad.gateway.config.security.filter.AuthFilter;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -21,12 +22,12 @@ public class AuthConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Override
-    public void configure(WebSecurity web) {
+    public void configure(@NotNull WebSecurity web) {
         web.ignoring().antMatchers(HttpMethod.GET , "/auth/**");
     }
 
     @Override
-    protected void configure(HttpSecurity http) throws Exception {
+    protected void configure(@NotNull HttpSecurity http) throws Exception {
 
         http.authorizeRequests()
                 .antMatchers("/auth/**").permitAll()

@@ -5,9 +5,9 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-public class TokenClaims {
+public class User {
 
-    private String uuid, name, cognitoUsername, email;
+    private String uuid, given_name, family_name, cognitoUsername, email, gender, birthdate;
     private Date issuedAt, expiresIn;
     private Long authTime;
 

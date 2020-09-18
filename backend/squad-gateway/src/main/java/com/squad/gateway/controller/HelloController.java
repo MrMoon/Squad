@@ -23,7 +23,7 @@ public class HelloController {
 
     @GetMapping("/me")
     public ResponseEntity<String> getCurrentUser() throws ParseException {
-        return ResponseEntity.ok(this.getAuthService().getClaims().toString());
+        return ResponseEntity.ok(this.getAuthService().getUser().toString());
     }
 
     public AuthService getAuthService() {

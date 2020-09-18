@@ -2,7 +2,7 @@ package com.squad.gateway.config.security.service;
 
 import com.nimbusds.jwt.JWTClaimsSet;
 import com.squad.gateway.config.security.model.CognitoJWT;
-import com.squad.gateway.config.security.model.TokenClaims;
+import com.squad.gateway.config.security.model.User;
 import com.squad.gateway.config.security.utils.StringManipulation;
 import lombok.val;
 import org.springframework.beans.factory.annotation.Value;
@@ -33,18 +33,21 @@ public class AuthService {
     @Value("${cognito.callback}")
     private String callbackUrl;
 
-    public TokenClaims getClaims() throws ParseException {
+    public User getUser() throws ParseException {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         JWTClaimsSet details = (JWTClaimsSet) authentication.getDetails();
-        TokenClaims tokenClaims = new TokenClaims();
-        tokenClaims.setUuid(details.getStringClaim("sub"));
-        tokenClaims.setAuthTime((Long) details.getClaim("auth_time"));
-        tokenClaims.setIssuedAt((Date) details.getClaim("iat"));
-        tokenClaims.setExpiresIn((Date) details.getClaim("exp"));
-        tokenClaims.setName(details.getStringClaim("name"));
-        tokenClaims.setCognitoUsername(details.getStringClaim("cognito:username"));
-        tokenClaims.setEmail(details.getStringClaim("email"));
-        return tokenClaims;
+        User user = new User();
+        user.setUuid(details.getStringClaim("sub"));
+        user.setAuthTime((Long) details.getClaim("auth_time"));
+        user.setIssuedAt((Date) details.getClaim("iat"));
+        user.setExpiresIn((Date) details.getClaim("exp"));
+        user.setGiven_name(details.getStringClaim("given_name"));
+        user.setFamily_name(details.getStringClaim("family_name"));
+        user.setBirthdate(details.getStringClaim("birthdate"));
+        user.setGender(details.getStringClaim("gender"));
+        user.setCognitoUsername(details.getStringClaim("cognito:username"));
+        user.setEmail(details.getStringClaim("email"));
+        return user;
     }
 
     public CognitoJWT getToken(String code) {
