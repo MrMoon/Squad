@@ -10,23 +10,15 @@ import org.springframework.web.bind.annotation.RestController;
 import java.text.ParseException;
 
 @RestController
-@RequestMapping(value = "/api/hello")
+@RequestMapping("/api/user")
 @RequiredArgsConstructor
-public class HelloController {
+public class UserController {
 
     private final AuthService authService;
 
     @GetMapping
-    public ResponseEntity<String> hello() {
-        return ResponseEntity.ok("Hello World");
-    }
-
-    @GetMapping("/me")
     public ResponseEntity<String> getCurrentUser() throws ParseException {
-        return ResponseEntity.ok(this.getAuthService().getUser().toString());
+        return ResponseEntity.ok(this.authService.getUser().toString());
     }
 
-    public AuthService getAuthService() {
-        return authService;
-    }
 }
