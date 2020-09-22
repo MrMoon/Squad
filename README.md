@@ -1,11 +1,7 @@
-
 ![alt_text](images/image1.png "image_tooltip")
 
 
 <h2>Squad Project Proposal</h2>
-
-
-**────────────────────────────────────**
 
 Laith AL-Saqqa
 
@@ -21,7 +17,7 @@ During the Covid-19 pandemic, people were in dire need to connect with each othe
 <h2>Solution Proposal</h2>
 
 
-A service that connects people where they have the same interests in a general generic abstract way and offers more services to get things done easier, faster, and better. Connecting people will be done using groups ( Squads** **), the groups themselves will be fully customizable, no admins ( leader ), anonymous users ( fish ), normal groups, super groups, chatting ( biolum ), Q&As ( light ) , and so much more. As well as easy, reliable, and fast document sharing between users ( Squids ); from simple text documents ( Ink ) to large videos, not forgetting the huge collection of documents,pins ( tentacles ) to mark what is important to you. Organizing tasks ( co-Squids ), events, and reminders is essential to getting things done in time and efficiency.
+A service that connects people where they have the same interests in a general generic abstract way and offers more services to get things done easier, faster, and better. Connecting people will be done using groups ( Squad ), the groups themselves will be fully customizable, no admins ( leader ), anonymous users ( fish ), normal groups, super groups, chatting ( biolum ), Q&As ( light ) , and so much more. As well as easy, reliable, and fast document sharing between users ( Squids ); from simple text documents ( Ink ) to large videos, not forgetting the huge collection of documents,pins ( tentacles ) to mark what is important to you. Organizing tasks ( co-Squids ), events, and reminders is essential to getting things done in time and efficiency.
 
 All of this will be backed with Machine Learning to recommend ( metis ) groups you could relate to, documents you may like, tasks scheduling, and more.Along with Analysis to see all kinds of insights.
 
