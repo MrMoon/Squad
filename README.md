@@ -1,4 +1,4 @@
-![alt_text](images/image1.png "image_tooltip")
+![squad logo](assets/logo.png "image_tooltip")
 
 
 <h2>Squad Project Proposal</h2>
