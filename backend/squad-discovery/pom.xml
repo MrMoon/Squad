@@ -70,6 +70,9 @@
                     <to>
                         <image>squad-discovery</image>
                     </to>
+                    <tags>
+                        <tag>latest</tag>
+                    </tags>
                 </configuration>
             </plugin>
         </plugins>
