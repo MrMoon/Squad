@@ -1,6 +1,8 @@
 ![squad logo](assets/logo.png "image_tooltip")
 # [Watch how things work](https://youtu.be/q_rmZaASnZI)
 
+# [Amazon Teckathon Winners](https://amazonteckathon.com/winners)
+
 <h2>Squad Project Proposal</h2>
 
 Laith AL-Saqqa
