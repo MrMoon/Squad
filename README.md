@@ -1,5 +1,8 @@
 ![squad logo](assets/logo.png "image_tooltip")
-# [Watch how things work](https://youtu.be/q_rmZaASnZI)
+
+---
+[Squad Video](https://www.youtube.com/watch?v=q_rmZaASnZI)
+[![Watch how things work](https://img.youtube.com/vi/q_rmZaASnZI/0.jpg)](https://www.youtube.com/watch?v=q_rmZaASnZI)
 
 # [Amazon Teckathon Winners](https://amazonteckathon.com/winners)
 
